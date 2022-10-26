@@ -68,3 +68,28 @@ document.querySelector("#btnPut").onclick = () => __awaiter(void 0, void 0, void
     const data = yield response.json();
     console.log(data);
 });
+document.querySelector("#btnPost").onclick = () => __awaiter(void 0, void 0, void 0, function* () {
+    const respnose = yield fetch("/api/account/expend", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ content: {
+                payedMoney: 100,
+                payment: "카드",
+                category: "식비",
+                memo: "추가",
+                payYear: 2022,
+                payMonth: 10,
+                payDay: 25
+            } })
+    });
+});
+document.querySelector("#btnDelete").onclick = () => __awaiter(void 0, void 0, void 0, function* () {
+    const respnose = yield fetch("/api/account/expend/id/5", {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json"
+        },
+    });
+});

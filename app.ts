@@ -50,7 +50,7 @@ app.get("/api/account/income", (req: any, res: any) => {
 
 app.delete("/api/account/income", (req: any, res: any) => {
     connection.query(
-        'delete * from income ',
+        'delete  from income ',
         (err: any, rows: any) => {
             if (err) {
                 throw err;
@@ -84,7 +84,7 @@ app.put("/api/account/income/id/:id", (req: any, res: any) => {
 
 app.delete("/api/account/income/id/:id", (req: any, res: any) => {
     connection.query(
-        'delete * from income where id = ?',
+        'delete from income where id = ?',
         [req.params.id],
         (err: any, rows: any) => {
             if (err) {
@@ -182,7 +182,7 @@ app.get("/api/account/expend", (req: any, res: any) => {
 
 app.delete("/api/account/expend/id/:id", (req: any, res: any) => {
     connection.query(
-        'delete * from expend where id = ?',
+        'delete  from expend where id = ?',
         [req.params.id],
         (err: any, rows: any) => {
             if (err) {
@@ -229,7 +229,7 @@ app.get("/api/account/expend/id/:id", (req: any, res: any) => {
 
 app.delete("/api/account/expend/id/:id", (req: any, res: any) => {
     connection.query(
-        'delete * from expend where id = ? ',
+        'delete  from expend where id = ? ',
         [req.params.id],
         (err: any, rows: any) => {
             if (err) {

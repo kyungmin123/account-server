@@ -73,3 +73,31 @@ const divEl = document.createElement("div");
     const data = await response.json();
     console.log(data);
 }
+
+(document.querySelector("#btnPost") as HTMLButtonElement).onclick = async () => {
+    const respnose = await fetch("/api/account/expend", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ content: {
+                            payedMoney: 100, 
+                            payment: "카드",
+                            category: "식비", 
+                            memo: "추가", 
+                            payYear: 2022,
+                            payMonth: 10, 
+                            payDay: 25
+        }})
+    })
+}
+
+(document.querySelector("#btnDelete") as HTMLButtonElement).onclick = async () => {
+        const respnose = await fetch("/api/account/expend/id/5", {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            },
+        });0
+    
+}
